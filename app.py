@@ -59,8 +59,6 @@ def extract_zip(zip_file):
 def main():
     st.title("RFP and Response Merger - UCI Tool")
 
-    st.markdown("### Developed by Aditya and Mahir")
-
     # Initialize session state for merged RFP writer and custom file name
     if 'merged_rfp_writer' not in st.session_state:
         st.session_state.merged_rfp_writer = None
@@ -161,6 +159,16 @@ def main():
                 # Provide download link
                 with open(output_path, 'rb') as f:
                     st.download_button("Download Merged PDF", f, file_name=f"{rfp_file.name}_merged.pdf")
+
+    # Add a small credits section at the bottom
+    st.markdown(
+        """
+        <div style="text-align: center; margin-top: 50px; font-size: 12px; color: gray;">
+            Developed by Aditya and Mahir
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 if __name__ == "__main__":
     main()
