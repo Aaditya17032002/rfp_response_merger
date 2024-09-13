@@ -57,7 +57,9 @@ def extract_zip(zip_file):
 
 # Streamlit Web App
 def main():
-    st.title("RFP and Response Merger")
+    st.title("RFP and Response Merger - UCI Tool")
+
+    st.markdown("### Developed by Aditya and Mahir")
 
     # Initialize session state for merged RFP writer and custom file name
     if 'merged_rfp_writer' not in st.session_state:
